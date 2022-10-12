@@ -1,15 +1,8 @@
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  OneToMany,
-  SelectQueryBuilder,
-} from 'typeorm';
-import { Exclude } from 'class-transformer';
+import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm';
 import { AllRoles } from 'types';
 
-@Entity()
-export class User {
+@Entity({ name: 'users' })
+export class User extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id?: string;
 
@@ -20,7 +13,6 @@ export class User {
   })
   email: string;
 
-  @Exclude()
   @Column({
     type: 'varchar',
     default: null,

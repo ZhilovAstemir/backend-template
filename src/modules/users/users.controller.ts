@@ -9,7 +9,7 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 
-import { ErrorOutDto, HttpOut, ReqUser, SuccessOutDto } from 'types';
+import { ErrorOutDto, HttpOut, SuccessOutDto } from 'types';
 import { UsersService } from './users.service';
 
 @UseInterceptors(ClassSerializerInterceptor)
